@@ -34,9 +34,9 @@ public class PlanetaServiceImpl implements PlanetaService {
 	@Override
 	public Planeta cadastrar(Planeta planeta) {	
 		
-		int qtdFilmes=new PlanetaRequest().obterQtdFilmes(planeta.getNome());
+		//int qtdFilmes=new PlanetaRequest().obterQtdFilmes(planeta.getNome());
 		
-		planeta.setQtdFilmes(qtdFilmes);
+		//planeta.setQtdFilmes(qtdFilmes);
 				
 		return this.planetaRepository.save(planeta);
 		

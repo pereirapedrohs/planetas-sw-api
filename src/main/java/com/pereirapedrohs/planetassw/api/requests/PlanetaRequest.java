@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.JSONObject;
+//import org.json.JSONObject;
 
 //import org.codehaus.jettison.json.JSONObject;
 
@@ -25,7 +25,7 @@ public class PlanetaRequest  {
 
 	     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 	     
-	     connection.setRequestProperty("User-Agent", "Mozilla/5.0");
+	     onnection.setRequestProperty("User-Agent", "Mozilla/5.0");
 	      
 	     connection.setRequestMethod("GET");
 	     connection.setReadTimeout(15*1000);
@@ -43,17 +43,17 @@ public class PlanetaRequest  {
 	      }
 	     
 	     
-	     System.out.println(stringBuilder.toString());	     
+	     //System.out.println(stringBuilder.toString());	     
 	     
 	     //JSONObject myResponse = new JSONObject(stringBuilder.toString());
 	     
 	     //System.out.println("PH TESTE ==== " + myResponse.getString("films"));
-	     return 2;
+	     //return 2;
 	     
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+		} //catch (Exception e) {
+			//System.out.println(e.getMessage());
 			
-			return 0;
+			//return 0;
 		}
 	}
 		
