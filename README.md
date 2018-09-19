@@ -39,13 +39,40 @@ Atributos:
   
 RECURSOS
 
- - LISTAR PLANETAS
+ - LISTAR PLANETAS (GET)
     Exemplo de pedido: "http://localhost:8080/api/planetassw/"
+    
+ - ADICIONAR PLANETA (POST)
+    Exemplo de pedido:"http://localhost:8080/api/planetassw/"
+    
+      BODY
+      {
+      "nome": "Naboo",
+      "clima": "temperado",
+      "terreno": "colinas relvadas, pântanos, florestas, montanhas",
+      "qtdFilmes": 4,
+      }
 
- - BUSCAR POR ID
+
+ - BUSCAR POR ID (GET)
     Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
     
- - BUSCAR POR NOME
+ - BUSCAR POR NOME (GET)
     Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
+    
+ - REMOVER POR ID (DELETE)
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+    
+  - UPDATE POR ID (PUT)
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+    
+    BODY
+      {
+      "nome": "Naboo",
+      "clima": "temperado",
+      "terreno": "florestas, montanhas",
+      "qtdFilmes": 4,
+      }
+    
     
 © Pedro Henrique 2018
