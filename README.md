@@ -7,7 +7,7 @@ Este projeto foi idealizado para participar de um processo seletivo para desenvo
 OBJETIVO
  - Desenvolver uma API que contenha os dados dos planetas do Star Wars
 
-Foi realizado através de muitas pesquisas e leitura de tutoriais e visa atender os seguintes requesitos:
+Foi realizado através de muitas pesquisas e leitura de tutoriais e visa atender os seguintes requisitos:
 
  - Criar uma API REST;
  - Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
@@ -40,12 +40,12 @@ Atributos:
 RECURSOS
 
  - LISTAR PLANETAS
-    Exemplo de pedido: localhost:8080/api/planetassw/
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/"
 
  - BUSCAR POR ID
-    Exemplo de pedido: localhost:8080/api/planetassw/(ID)
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
     
  - BUSCAR POR NOME
-    Exemplo de pedido: localhost:8080/api/planetassw/nome/
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
     
 © Pedro Henrique 2018
