@@ -1,61 +1,30 @@
 package com.pereirapedrohs.planetassw.api.requests;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.json.JSONArray;
 
-//import org.json.JSONObject;
-
-//import org.codehaus.jettison.json.JSONObject;
-
-//import org.codehaus.jettison.json.JSONObject;
-//import org.json.JSONObject;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
 
 
-public class PlanetaRequest  {
-	
+public class PlanetaRequest {
+
 	public int obterQtdFilmes(String nome) {
-		
 		try {
-					
-	     URL url = new URL("https://swapi.co/api/planets/?search=" + nome);
-	     BufferedReader reader = null;
-	     StringBuilder stringBuilder;
+						
+			HttpResponse<JsonNode> jsonResponse=Unirest.get("https://swapi.co/api/planets/")
+			.queryString("format", "json")
+			.queryString("search", nome)
+			.asJson();
 
-	     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	     
-	     onnection.setRequestProperty("User-Agent", "Mozilla/5.0");
-	      
-	     connection.setRequestMethod("GET");
-	     connection.setReadTimeout(15*1000);
-	     connection.connect();
-
-	     
-	     reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-	     stringBuilder = new StringBuilder();
-
-	     String line = null;
-	     StringBuffer response = new StringBuffer();
-	     while ((line = reader.readLine()) != null)
-	      {
-	    	 response.append(line);
-	      }
-	     
-	     
-	     //System.out.println(stringBuilder.toString());	     
-	     
-	     //JSONObject myResponse = new JSONObject(stringBuilder.toString());
-	     
-	     //System.out.println("PH TESTE ==== " + myResponse.getString("films"));
-	     //return 2;
-	     
-		} //catch (Exception e) {
-			//System.out.println(e.getMessage());
+			JSONArray response = jsonResponse.getBody().getObject().getJSONArray("results").getJSONObject(0).getJSONArray("films");
 			
-			//return 0;
+			return response.length();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
 		}
 	}
-		
-		
+
 }

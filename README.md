@@ -3,52 +3,69 @@ API com os dados dos planetas do Star Wars em Java e MongoDB
 
 Este projeto foi idealizado para participar de um processo seletivo para desenvolvedor na empresa B2W Digital.
 
-OBJETIVO
+# OBJETIVO
 
 Desenvolver uma API que contenha os dados dos planetas do Star Wars
-Foi realizado através de muitas pesquisas e leitura de tutoriais e visa atender os seguintes requisitos:
+    Foi realizado através de muitas pesquisas e leitura de tutoriais e visa atender os seguintes requisitos:
 
-Criar uma API REST;
+    Criar uma API REST;
 
-Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
+    Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
 
- Nome
- Clima
- Terreno
-Para cada planeta também devemos ter a quantidade de aparições em filmes, que podem ser obtidas pela API pública do Star Wars: https://swapi.co/.
+        Nome
+        Clima
+        Terreno
+
+    Para cada planeta também deve ter a quantidade de aparições em filmes, que podem ser obtidas pela API pública do Star Wars: https://swapi.co/.
 
 FUNCIONALIDADES DESEJADAS
 
-Adicionar um planeta (com nome, clima e terreno)
-Listar planetas
-Buscar por nome
-Buscar por ID
-Remover planeta
+    - Adicionar um planeta (com nome, clima e terreno)
+    - Listar planetas
+    - Buscar por nome
+    - Buscar por ID
+    - Remover planeta
+
 LINGUAGEM USADA
+    
+    - Java
 
-Java
 BD
+    
+    - MongoDB
 
-MongoDB
-Atributos:
+    Atributos:
 
-Id, Nome, clima, terreno, qtdFilmes
+        Id, Nome, clima, terreno, qtdFilmes
+
 RECURSOS
 
-LISTAR PLANETAS (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/"
+  LISTAR PLANETAS (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/"
+  
+  ADICIONAR PLANETA (POST) Exemplo de pedido:"http://localhost:8080/api/planetassw/"
 
-ADICIONAR PLANETA (POST) Exemplo de pedido:"http://localhost:8080/api/planetassw/"
+        BODY    
 
-BODY { "nome": "Naboo", "clima": "temperado", "terreno": "colinas relvadas, pântanos, florestas, montanhas", "qtdFilmes": 4, }
+```{ 
+            "nome": "Naboo", 
+            "clima": "temperado", 
+            "terreno": "colinas relvadas, pântanos, florestas, montanhas" 
+            }```
 
-BUSCAR POR ID (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+    BUSCAR POR ID (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-BUSCAR POR NOME (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
+    BUSCAR POR NOME (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
 
-REMOVER POR ID (DELETE) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+    REMOVER POR ID (DELETE) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-UPDATE POR ID (PUT) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+    UPDATE POR ID (PUT) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-BODY { "nome": "Naboo", "clima": "temperado", "terreno": "florestas, montanhas", "qtdFilmes": 4, }
+        BODY 
+
+            { 
+            "nome": "Naboo", 
+            "clima": "temperado", 
+            "terreno": "florestas, montanhas"
+            }
 
 © Pedro Henrique 2018
