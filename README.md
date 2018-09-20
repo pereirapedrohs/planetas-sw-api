@@ -10,7 +10,7 @@ Desenvolver uma API que contenha os dados dos planetas do Star Wars
 
     Criar uma API REST;
 
-    Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
+Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
 
         Nome
         Clima
@@ -18,7 +18,7 @@ Desenvolver uma API que contenha os dados dos planetas do Star Wars
 
     Para cada planeta também deve ter a quantidade de aparições em filmes, que podem ser obtidas pela API pública do Star Wars: https://swapi.co/.
 
-FUNCIONALIDADES DESEJADAS
+# FUNCIONALIDADES DESEJADAS
 
     - Adicionar um planeta (com nome, clima e terreno)
     - Listar planetas
@@ -26,46 +26,58 @@ FUNCIONALIDADES DESEJADAS
     - Buscar por ID
     - Remover planeta
 
-LINGUAGEM USADA
+## LINGUAGEM USADA
     
     - Java
 
-BD
+## BD
     
     - MongoDB
 
-    Atributos:
+## Atributos:
 
         Id, Nome, clima, terreno, qtdFilmes
+        
+# AMBIENTE
 
-RECURSOS
+Usar MongoDB com database "planetasswapi". Caso deseje, existe um BKP do banco usado para teste dentro repositório abaixo:
 
-  LISTAR PLANETAS (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/"
+    planetas-sw-api/MongoDB/dados/planetasswapi/
+
+
+# RECURSOS
+
+### LISTAR PLANETAS (GET) 
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/"
   
-  ADICIONAR PLANETA (POST) Exemplo de pedido:"http://localhost:8080/api/planetassw/"
+### ADICIONAR PLANETA (POST) 
+    Exemplo de pedido:"http://localhost:8080/api/planetassw/"
+    
+**BODY**
+    { 
+    "nome": "Naboo", 
+    "clima": "temperado", 
+    "terreno": "colinas relvadas, pântanos, florestas, montanhas" 
+    }
 
-        BODY    
+### BUSCAR POR ID (GET) 
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-```{ 
-            "nome": "Naboo", 
-            "clima": "temperado", 
-            "terreno": "colinas relvadas, pântanos, florestas, montanhas" 
-            }```
+### BUSCAR POR NOME (GET) 
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
 
-    BUSCAR POR ID (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+### REMOVER POR ID (DELETE) 
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-    BUSCAR POR NOME (GET) Exemplo de pedido: "http://localhost:8080/api/planetassw/nome/{nome}"
+### UPDATE POR ID (PUT) 
+    Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
 
-    REMOVER POR ID (DELETE) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
+**BODY** 
 
-    UPDATE POR ID (PUT) Exemplo de pedido: "http://localhost:8080/api/planetassw/{id}"
-
-        BODY 
-
-            { 
-            "nome": "Naboo", 
-            "clima": "temperado", 
-            "terreno": "florestas, montanhas"
-            }
+    { 
+    "nome": "Naboo", 
+    "clima": "temperado", 
+     "terreno": "florestas, montanhas"
+     }
 
 © Pedro Henrique 2018
